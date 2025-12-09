@@ -1,0 +1,146 @@
+# 💎 Diamond Dynamics: Price Prediction & Market Segmentation  
+*A Machine Learning & Deep Learning powered Luxury Pricing Analytics System*
+
+---
+
+## 📌 Overview  
+
+Diamonds vary widely in value depending on characteristics such as **carat, cut, clarity, color, and dimensions**.  
+This project predicts diamond prices and segments diamonds into meaningful **market clusters** using:
+
+- 🧠 Machine Learning Models  
+- 🤖 Artificial Neural Networks  
+- 📊 K-Means Clustering  
+- 🌐 Interactive Streamlit App  
+
+---
+
+## 🎯 Objectives
+
+✔ Predict diamond price based on physical and quality attributes  
+✔ Cluster diamonds into premium, mid-range, and affordable segments  
+✔ Provide an easy-to-use interface for real-time predictions  
+
+---
+
+## 🧠 Skills Gained
+
+| Category | Skills |
+|---------|--------|
+| Data Preprocessing | Missing values, outliers, skew handling |
+| EDA | Distribution analysis, categorical impact, heatmaps |
+| Feature Engineering | Log transformation, derived fields, dimensional ratio |
+| Modeling | Linear Regression, Random Forest, XGBoost, ANN |
+| Clustering | K-Means, PCA reduction, cluster interpretation |
+| Deployment | Streamlit UI, model serving |
+| Analytics Domain | Luxury pricing strategy, segmentation & product positioning |
+
+---
+
+## 🏷 Domain
+
+🛍 **E-Commerce**  
+💎 **Luxury Goods Analytics**  
+📈 **Retail Pricing Optimization**  
+🎯 **Customer Segmentation**
+
+---
+
+## 📂 Dataset Details
+
+- 📌 Source: Diamond Dataset  
+- 📌 Rows: **53,940**
+- 📌 Columns: **10 (raw), 15+ (post-feature-engineering)**
+
+| Feature | Description |
+|--------|------------|
+| carat | Weight of the diamond |
+| cut | Cut quality (Fair → Ideal) |
+| color | Color grading (J → D) |
+| clarity | Purity level |
+| x,y,z | Physical dimensions |
+| price | USD value (converted to INR) |
+| depth, table | Dimensional proportions |
+
+---
+
+## 🛠 Data Preprocessing Steps
+
+- Handled invalid zero values  
+- Treated outliers using **IQR/Z-Score**  
+- Reduced skew using **Log/Box-Cox Transform**  
+- Scaled numerical features (StandardScaler)  
+- Encoded categorical features (Ordinal & Label Encoding)
+
+---
+
+## 🧪 Feature Engineering
+
+| New Feature | Purpose |
+|------------|---------|
+| Volume = x × y × z | Shape-based value signal |
+| Price / Carat | Normalized pricing |
+| Dimension Ratio = (x+y)/(2z) | Shape proportion |
+| Carat Category (Light / Medium / Heavy) | Market segmentation interpretation |
+
+---
+
+## 🔍 Exploratory Data Analysis (Highlights)
+
+- Price increases exponentially with **carat**
+- Ideal cut, D-color, IF-clarity diamonds show **highest price**
+- Strong correlation found between dimensions and price
+
+---
+
+## 🧠 Models Used
+
+### 🔹 Regression Models
+- Linear Regression
+- Decision Tree Regressor
+- KNN Regressor
+- Random Forest Regressor ⭐ (Best ML Model)
+- XGBoost
+- ANN Regression Model (TensorFlow)
+
+### 🔹 Clustering
+- K-Means clustering with Optimal **k = 3**
+- PCA for 2D visualization
+
+---
+
+## 🏆 Results Summary
+
+| Model | MAE | MSE | RMSE | R² Score |
+|-------|-----|-----|------|----------|
+| Linear Regression | 8504.23 | 1.65e+08 | 12845.67 | 0.88 |
+| Random Forest Regressor | 3125.52 | 3.42e+07 | 5850.56 | 0.97 |
+| KNN Regression | 4200.33 | 5.89e+07 | 7677.91 | 0.94 |
+| XGBoost Regression | 2901.12 | 2.98e+07 | 5461.91 | 0.98 |
+| ANN Model | 3800.45 | 4.75e+07 | 6891.28 | 0.95 |
+
+
+---
+
+## 🧩 Market Cluster Labels
+
+| Cluster Name | Description |
+|-------------|-------------|
+| Premium Heavy Diamonds | Large size, highest price |
+| Mid-Range Balanced Diamonds | Medium carat, mid price |
+| Affordable Small Diamonds | Low weight, budget tier |
+
+---
+
+## 🖥 Streamlit App Features
+
+✔ Live input form (Carat, Cut, Color, Clarity, Dimensions)  
+✔ Predict price using ML & ANN  
+✔ Predict cluster category  
+✔ Display mapped human-readable cluster name  
+✔ Clean UI and responsive layout  
+
+Run app:
+
+```sh
+streamlit run app.py
